@@ -1,0 +1,245 @@
+Delivered-To: as29624041@gmail.com
+Received: by 2002:a05:6f02:4307:b0:fc:37dc:6c4b with SMTP id a7csp940621rch;
+        Sat, 20 Sep 2025 12:31:03 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGIfyEI5cLOdra1PQLFp75nmTgQlnS83AHuM3PGzJzquRlBpiNjJdM6G7p9qenrtKcQPyNl
+X-Received: by 2002:a05:620a:7105:b0:83d:a785:71a8 with SMTP id af79cd13be357-83da7857769mr706106385a.27.1758396662847;
+        Sat, 20 Sep 2025 12:31:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1758396662; cv=none;
+        d=google.com; s=arc-20240605;
+        b=d8MmI3vUMrGezhBJWriQI3tAlZpz9+Gtlo/C65X+z09eh/vix0fTS0XRMPIOhh2z+V
+         /jl9XmrqAnrdaahBstmP51hYs8nM3L7VKWfU31b4zDhMaWzoUBtr1hOsuIyKaQUrp4gk
+         kK8OPqYkVz2HedJau/7SsfLEOkKFewK3gZmZ/KSaM8WdVXb1kzljFCk6A6LekOQR026p
+         XqZ8hDMwVs9pXn1bE6H9WNKBSvu9zhlA5KEcYdpY8kWLD7tMmQcFtJ+joB3Tbc3CmOJt
+         ccQoC5IyCIFww9aSQqeoGAXXZjKt2Li9rcNeDpxkvNjbn0KM/FUnKXekv3mM2T4z1yzW
+         bNZg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature;
+        bh=/Sns3adh4/2EuI752ck3wT8ITbtpMsc/NdNQEqaFvHE=;
+        fh=20jFe8pr1HMN5b6/dZzvRXZnAqtsZfR7In2xLW2dk6U=;
+        b=VghHWXCZtxgx+YXoRSu+ptOgR4BFsatYOLo52Fv/X6iWihmwdS9YS93xEnkkKW/XCD
+         0DJ1AAWvSevMISgte6TXD5NA7Ig6a8k7mMgmyaAc7q7/PbL0VdjC+IP83jXVwTlEIlCZ
+         DNpU5DQfWu8BaOUxvwgYD9XMtD823sQptb96bWyNjLvyuGMLXZRMkNTDsCQzTD9DiZwC
+         TBEnOHWTqXqeKS8W18qcxnP11B4d3aS9pmxnisbpOQO8WlFSqR8tc8KOaXJgQrHKtm+S
+         Bj5UaXuXAgYh/0I4FMBp+9oBaitePRBVIfsfCNzQ4ml+v8AcEoUJjKxtFNwNIKIAQtIE
+         48HA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@sendgrid.net header.s=smtpapi header.b=V8K3Sdox;
+       spf=pass (google.com: domain of bounces+56192220-4f53-as29624041=gmail.com@sendgrid.net designates 159.183.224.104 as permitted sender) smtp.mailfrom="bounces+56192220-4f53-as29624041=gmail.com@sendgrid.net";
+       dmarc=fail (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <bounces+56192220-4f53-as29624041=gmail.com@sendgrid.net>
+Received: from s.wfbtzhsv.outbound-mail.sendgrid.net (s.wfbtzhsv.outbound-mail.sendgrid.net. [159.183.224.104])
+        by mx.google.com with ESMTPS id d75a77b69052e-4bf96e48f28si25067971cf.1002.2025.09.20.12.31.02
+        for <as29624041@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 20 Sep 2025 12:31:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+56192220-4f53-as29624041=gmail.com@sendgrid.net designates 159.183.224.104 as permitted sender) client-ip=159.183.224.104;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@sendgrid.net header.s=smtpapi header.b=V8K3Sdox;
+       spf=pass (google.com: domain of bounces+56192220-4f53-as29624041=gmail.com@sendgrid.net designates 159.183.224.104 as permitted sender) smtp.mailfrom="bounces+56192220-4f53-as29624041=gmail.com@sendgrid.net";
+       dmarc=fail (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.net;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:cc:content-type:date:feedback-id:from:subject:to;
+	s=smtpapi; bh=/Sns3adh4/2EuI752ck3wT8ITbtpMsc/NdNQEqaFvHE=;
+	b=V8K3SdoxM7sHUHV8d+O2gq6GbwvJdr3lDC1u0yK77CDdAUC8Qn4RZPTvknrbObp2jhjI
+	A9vUQGQohZYVOzwSOi7/VsoAFN3xUg3gKAqLGRHq/fuQIU+pYXdV3Usw6vab8rKb6Pf+wv
+	GXCjWD4X4RY+m4Ekix1fmym/JA3MJsd28=
+Received: by recvd-6f5cbff5dc-5d7s5 with SMTP id recvd-6f5cbff5dc-5d7s5-1-68CF00F5-7
+	2025-09-20 19:31:01.09403963 +0000 UTC m=+1558201.339294267
+Received: from NTYxOTIyMjA (unknown)
+	by geopod-ismtpd-39 (SG) with HTTP
+	id gIUzadHpTkqtW-ifJCxBDw
+	Sat, 20 Sep 2025 19:31:00.917 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Date: Sat, 20 Sep 2025 19:31:01 +0000 (UTC)
+From: muasif025@gmail.com
+Mime-Version: 1.0
+Message-ID: <gIUzadHpTkqtW-ifJCxBDw@geopod-ismtpd-39>
+Subject: Stop Wasting Hours on SOC2 Audit Prep
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EgfGFxxdN8a9O=2FtoQevVluxEq1CnEBEm7u+lh2pvHoJqhMx9CmjXkpT1ud?=
+ =?us-ascii?Q?1P1N7wxdz7ZnQ2=2F3ycDkmtbvhfU4KdYzXnBf3V0?=
+ =?us-ascii?Q?So3XOI8rsao8s0MCDGHkhCDbKTFpKmbY+3NhaJy?=
+ =?us-ascii?Q?1p4s7pCAaoEpzMhu3EAegqzvsVbGu2Kn2oXcANa?=
+ =?us-ascii?Q?QMCjKXrD4W57C+fygQeofOtM87bIvM8IHKUNerZ?=
+ =?us-ascii?Q?Q=3D=3D?=
+To: as29624041@gmail.com
+X-Entity-ID: u001.1WbKqqf+WY7Ao3J5nodNjg==
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=3D"utf-8">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1">
+    <title>Slay the SOC2 Monster with ComplAI</title>
+    <style type=3D"text/css">
+        /* Client-specific styles to ensure consistent rendering */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-=
+adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; lin=
+e-height: 100%; outline: none; text-decoration: none; }
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+        /* General styles for better readability and presentation */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        /* Highlighting for ComplAI name */
+        .complai-highlight {
+            color: #28a745; /* A fresh green color */
+            font-weight: bold;
+        }
+        /* Responsive adjustments for mobile */
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 100% !important;
+                padding: 15px !important;
+            }
+            .content-padding {
+                padding: 20px !important;
+            }
+            .button {
+                padding: 10px 20px !important;
+                font-size: 15px !important;
+            }
+        }
+    </style>
+</head>
+<body style=3D"margin: 0; padding: 0; background-color: #f7f7f7;">
+    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" =
+style=3D"background-color: #f7f7f7;">
+        <tr>
+            <td align=3D"center" style=3D"padding: 20px 10px;">
+                <!-- Main Content Container -->
+                <table class=3D"container" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"600" style=3D"max-width: 600px; background-color:=
+ #ffffff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);">
+                    <tr>
+                        <td class=3D"content-padding" style=3D"padding: 30p=
+x; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height:=
+ 1.6; color: #333333;">
+
+                            <p style=3D"margin-bottom: 1em;">Dear CEO,</p>
+
+                            <p style=3D"margin-bottom: 1em;">I know, I know=
+. Another compliance email. Right up there with "reboot your router" and "y=
+our subscription is expiring" in terms of excitement.</p>
+
+                            <p style=3D"margin-bottom: 1em;">But bear with =
+me, because as a CEO, I'm betting "SOC2 audit prep" probably ranks somewher=
+e between "root canal" and "explaining TikTok to your grandma" on your list=
+ of favorite activities. It's a necessary evil, but the time, the stress, t=
+he endless documentation, and the general "paperwork monster" can really ea=
+t into your team's focus on, well, <em>your actual business</em>.</p>
+
+                            <p style=3D"margin-bottom: 1em;">That's where <=
+span class=3D"complai-highlight" style=3D"color: #28a745; font-weight: bold=
+;">ComplAI</span> swoops in, cape billowing, ready to slay that monster.</p=
+>
+
+                            <p style=3D"margin-bottom: 1em;">We've built an=
+ AI-powered SaaS tool that doesn't just <em>help</em> with SOC2; it practic=
+ally <em>does it for you</em>. Think of it as having a highly caffeinated, =
+super-smart compliance expert on your team, available 24/7, without the nee=
+d for a corporate credit card for their espresso habit.</p>
+
+                            <p style=3D"margin-bottom: 0.5em;"><span class=
+=3D"complai-highlight" style=3D"color: #28a745; font-weight: bold;">ComplAI=
+</span> will:</p>
+                            <ul style=3D"list-style-type: disc; margin-left=
+: 20px; padding-left: 0; margin-top: 0; margin-bottom: 1em;">
+                                <li style=3D"margin-bottom: 0.5em;"><strong=
+>Automate</strong> your evidence collection (no more frantic screenshot spr=
+ints!).</li>
+                                <li style=3D"margin-bottom: 0.5em;"><strong=
+>Guide</strong> you through control frameworks like a seasoned sherpa.</li>
+                                <li style=3D"margin-bottom: 0.5em;"><strong=
+>Ensure</strong> you're audit-ready <em>before</em> the auditors even knock=
+ on your virtual door.</li>
+                                <li style=3D"margin-bottom: 0.5em;"><strong=
+>Save</strong> your team countless hours (and your company countless dollar=
+s!).</li>
+                            </ul>
+
+                            <p style=3D"margin-bottom: 1em;">Our goal? To t=
+urn your next SOC2 audit from a nail-biting, all-hands-on-deck frenzy into =
+a relatively calm, almost... dare I say... <em>pleasant</em> experience. Le=
+ss "OMG we forgot that policy!" and more "Oh, right, that's already handled=
+."</p>
+
+                            <p style=3D"margin-bottom: 1em;">I know your ti=
+me is more valuable than gold-plated unicorns, so I'm not asking for much. =
+Would you be open to a super-quick (15-minute, no-BS) chat next week to see=
+ how <span class=3D"complai-highlight" style=3D"color: #28a745; font-weight=
+: bold;">ComplAI</span> could be your company's new favorite secret weapon?=
+</p>
+
+                            <!-- Call to Action Button -->
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" width=3D"100%" style=3D"margin-top: 20px; margin-bottom: 20px;">
+                                <tr>
+                                    <td align=3D"center">
+                                        <a href=3D"#" class=3D"button" styl=
+e=3D"display: inline-block; background-color: #007bff; color: #ffffff; padd=
+ing: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bol=
+d;">Schedule a 15-Minute Chat</a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <p style=3D"margin-bottom: 1em;">Or, if you pre=
+fer, just reply "Tell me more, Alice!" and I'll send a brief overview that =
+cuts straight to the good stuff.</p>
+
+                            <!-- Signature -->
+                            <div class=3D"signature" style=3D"margin-top: 3=
+0px; font-size: 0.9em; color: #555555;">
+                                <p style=3D"margin-bottom: 0.5em;">Best,</p=
+>
+                                <p style=3D"margin-bottom: 0;"><strong>Alic=
+e</strong><br>
+                                Your Friendly Neighborhood Compliance AI Wh=
+isperer<br>
+                                (and Sales Agent at ComplAI)<br>
+                                <a href=3D"https://u56192220.ct.sendgrid.ne=
+t/ls/click?upn=3Du001.Os4rbVEUa1Vf5nakowFMUoHSkASctqB1WZ3l56H2-2BUk-3Dtv32_=
+xFOXuRnDadDcah-2Bt7h7at5lPO9mW8Y8VZZ93GF9QoClDZknz3NHfbFFLaers1dd3yFBbDLmC-=
+2F-2FC13lhqT7DAmSeamhHkuseQH9PRcGe5IwmBvSTRWvASJdYy3KSrNalNUkxC6q-2F-2FoXxr=
+T3uLUbYJpi5CPKAkMPt4RDnrxYgYMaKOOS3Ip1QI3QDp73g2IUZk-2FauKCjvpIIG4TaibMdFeg=
+Q-3D-3D" style=3D"color: #007bff; text-decoration: none;">www.complai.com</=
+a></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <!-- End Main Content Container -->
+            </td>
+        </tr>
+    </table>
+<img src=3D"https://u56192220.ct.sendgrid.net/wf/open?upn=3Du001.9yDKb09Mt8=
+yxnovtyAup0l7b7UXal7AJ-2B9xUV7quPW1MNTNV7n5qJx8bqKBdlydW4ouf2VqxkavANbPMIXL=
+LYOV5ytw1uP6iEDV3LldxErDBsqpftCKSG-2BdfJ12x5ygwlzN-2F6fQCO1LDWsSqOqr-2FSTBA=
+DScz-2F4-2BIavSLPU7SBXluLm9Tse3MUui4Vi8Z3eSLw498tN8b4lkBrVC8l5FvUg-3D-3D" a=
+lt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !importan=
+t;width:1px !important;border-width:0 !important;margin-top:0 !important;ma=
+rgin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important=
+;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !impo=
+rtant;padding-left:0 !important;"/></body>
+</html>

@@ -1,4 +1,4 @@
-# This Agentic project
+# This is OpenAI Agents SDK project
 ## In this Agent get user quey and create relevant number of query searches
 ## and then use agents WebSearchTool to search queries
 ## and pass this result to another agent that write reports including markdown and summary reports

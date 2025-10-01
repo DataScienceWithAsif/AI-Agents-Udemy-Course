@@ -1,0 +1,33 @@
+# run.py
+import sys
+import os
+
+# Add the parent directory of 'src' to the Python path
+sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
+
+# Add Docker's bin directory to the PATH environment variable
+docker_path = "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+if docker_path not in os.environ["PATH"]:
+    os.environ["PATH"] += os.pathsep + docker_path
+
+from engineering_team.main import EngineeringTeam
+requirements = """
+A simple account management system for a trading simulation platform.
+The system should allow users to create an account, deposit funds, and withdraw funds.
+The system should allow users to record that they have bought or sold shares, providing a quantity.
+The system should calculate the total value of the user's portfolio, and the profit or loss from the initial deposit.
+The system should be able to report the holdings of the user at any point in time.
+The system should be able to report the profit or loss of the user at any point in time.
+The system should be able to list the transactions that the user has made over time.
+The system should prevent the user from withdrawing funds that would leave them with a negative balance, or from buying more shares than they can afford, or selling shares that they don't have.
+The system has access to a function get_share_price(symbol) which returns the current price of a share, and includes a test implementation that returns fixed prices for AAPL, TSLA, GOOGL.
+"""
+module_name = "accounts.py"
+class_name = "Account"
+if __name__ == "__main__":
+    inputs = {
+        'requirements': requirements,
+        'module_name': module_name,
+        'class_name': class_name
+    }
+    EngineeringTeam().crew().kickoff(inputs=inputs)
